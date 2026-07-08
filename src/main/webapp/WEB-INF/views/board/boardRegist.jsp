@@ -22,7 +22,7 @@
         <textarea name="boardContent" class="textarea"></textarea>
 
         <br><br>
-        <input type="file" name="boardPdfList" multiple >
+        <input type="file" name="pdfFiles" multiple >
         <button type="submit" class="btn">등록</button>
         <a href="/board/main" class="btn secondary" >취소</a>
     </form>

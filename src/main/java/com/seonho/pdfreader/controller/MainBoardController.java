@@ -57,7 +57,7 @@ public class MainBoardController {
     public String wirteBoard(
         BoardVO boardVO
         , HttpSession session
-        , MultipartFile[] boardPdfList
+        , @RequestParam(value = "pdfFiles", required = false) MultipartFile[] pdfFiles
     ) {
         
         MemberVO member = (MemberVO)session.getAttribute("member");
@@ -68,7 +68,7 @@ public class MainBoardController {
         
         boardVO.setBoardWriter(member.getUserId());
 
-        boardService.saveBoard(boardVO,boardPdfList);
+        boardService.saveBoard(boardVO,pdfFiles);
         
         return "redirect:/board/detail/"+boardVO.getBoardNo();
     }

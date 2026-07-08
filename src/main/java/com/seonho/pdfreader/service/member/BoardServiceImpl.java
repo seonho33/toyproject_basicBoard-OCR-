@@ -44,8 +44,11 @@ public class BoardServiceImpl implements BoardService {
 
 
     @Override
-    public Long saveBoard(BoardVO boardVO, MultipartFile[] boardPdfList) {
-        
+    public Long saveBoard(
+        BoardVO boardVO
+        , MultipartFile[] boardPdfList
+    ) {
+
         return boardStore.save(boardVO);
     }
 
