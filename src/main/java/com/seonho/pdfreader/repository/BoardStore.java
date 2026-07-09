@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.seonho.pdfreader.vo.AttachFileVO;
 import com.seonho.pdfreader.vo.BoardVO;
 
 @Repository
@@ -17,7 +19,9 @@ public class BoardStore {
     private long boardNo = 1L;
 
     // 게시물 저장 메서드
-    public Long save(BoardVO boardVO){
+    public Long save(BoardVO boardVO, MultipartFile[] files){
+
+        
 
         boardVO.setBoardNo(boardNo++);
         boardVO.setBoardRegDate(LocalDateTime.now());
@@ -47,5 +51,15 @@ public class BoardStore {
     public BoardVO getBoard(Long boardNo){
 
         return boardMap.get(boardNo);
+    }
+
+    //첨부파일을 로컬에 저장하고 fileVO를 생성해 boardVO에 set해주는 메서드
+    public AttachFileVO saveAttachFile(MultipartFile[] files){
+
+        for(MultipartFile file : files){
+
+        }
+
+        return null;
     }
 }

@@ -27,8 +27,8 @@ public class PdfController {
     private final PdfService pdfService;
 
     @GetMapping("/")
-    public String index(){
-        return "index";
+    public String main(){
+        return "redirect:/board/main";
     }
 
     @PostMapping("/pdf/upload")

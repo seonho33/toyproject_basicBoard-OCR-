@@ -8,7 +8,7 @@ import com.seonho.pdfreader.vo.PageVO;
 public interface BoardService {
     public PageVO<BoardVO> pageList(int page);
 
-    public Long saveBoard(BoardVO boardVO, MultipartFile[] boardPdfList);
+    public Long saveBoard(BoardVO boardVO, MultipartFile[] attachFiles);
 
     public BoardVO getBoardVO(Long boardNo);
 }

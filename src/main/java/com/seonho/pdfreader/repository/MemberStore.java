@@ -14,6 +14,18 @@ public class MemberStore {
     private final Map<String,MemberVO> memberList = new HashMap<>();
     private long sequenceId = 1L;
 
+    public MemberStore(){
+        //test계정
+        MemberVO member = new MemberVO();
+        
+        member.setUserId("test");
+        member.setUserPassword("1234");
+        member.setUserName("test");
+        member.setUserGender("male");
+        
+        save(member);
+    }
+
     // 유저 저장 메서드
     public boolean save(MemberVO memberDTO){
         

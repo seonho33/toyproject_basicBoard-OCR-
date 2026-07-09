@@ -57,7 +57,7 @@ public class MainBoardController {
     public String wirteBoard(
         BoardVO boardVO
         , HttpSession session
-        , @RequestParam(value = "pdfFiles", required = false) MultipartFile[] pdfFiles
+        , @RequestParam(value = "attachFiles", required = false) MultipartFile[] attachFiles
     ) {
         
         MemberVO member = (MemberVO)session.getAttribute("member");
@@ -68,7 +68,7 @@ public class MainBoardController {
         
         boardVO.setBoardWriter(member.getUserId());
 
-        boardService.saveBoard(boardVO,pdfFiles);
+        boardService.saveBoard(boardVO,attachFiles);
         
         return "redirect:/board/detail/"+boardVO.getBoardNo();
     }
@@ -83,6 +83,11 @@ public class MainBoardController {
         model.addAttribute("boardVO",boardVO);
 
         return "board/detail";
+    }
+    
+    @GetMapping("pdf")
+    public String pdf() {
+        return "pdfOCR";
     }
     
     

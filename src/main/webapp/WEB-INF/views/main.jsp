@@ -58,6 +58,7 @@
 <main class="container">
     <div class="board-top">
         <h1>PDF 게시판</h1>
+        <a href="/board/pdf">pdf보러가기</a>
         <button id="writeBtn">글쓰기</button>
     </div>
 
@@ -83,11 +84,11 @@
                         <td>${board.boardNo}</td>
                         <td>
                             <a href="/board/detail/${board.boardNo}" class="title-link">
-                                ${board.title}
+                                ${board.boardTitle}
                             </a>
                         </td>
-                        <td>${board.writerName}</td>
-                        <td>${board.createdAt}</td>
+                        <td>${board.boardWriter}</td>
+                        <td>${board.boardRegDate}</td>
                     </tr>
                 </c:forEach>
             </c:otherwise>

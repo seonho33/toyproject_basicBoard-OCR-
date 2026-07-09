@@ -17,12 +17,12 @@
         <input type="text" name="boardTitle" class="input">
 
         <p>글쓴이 ${sessionScope.member.userId}</p>
-
+        <input type="file" name="attachFiles" multiple >
         <p>내용</p>
         <textarea name="boardContent" class="textarea"></textarea>
 
         <br><br>
-        <input type="file" name="pdfFiles" multiple >
+
         <button type="submit" class="btn">등록</button>
         <a href="/board/main" class="btn secondary" >취소</a>
     </form>
