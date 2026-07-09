@@ -19,7 +19,7 @@ public class BoardStore {
     private long boardNo = 1L;
 
     // 게시물 저장 메서드
-    public Long save(BoardVO boardVO, MultipartFile[] files){
+    public Long save(BoardVO boardVO){
 
         
 
@@ -57,7 +57,7 @@ public class BoardStore {
     public AttachFileVO saveAttachFile(MultipartFile[] files){
 
         for(MultipartFile file : files){
-
+            
         }
 
         return null;
